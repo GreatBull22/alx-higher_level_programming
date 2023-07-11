@@ -1,15 +1,21 @@
 #!/usr/bin/python3
+""" Module of class Square """
 
-"""Defines a Rectangle subclass Square."""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """ Square Class """
+
+    """ Function contructor that instance the private attributes
+
+        Atrributes:
+            size (int): size
+    """
+
     def __init__(self, size):
-        """ size init"""
+        self.integer_validator("size", size)
         self.__size = size
-        super().__init__(self.__size, self.__size)
+        super().__init__(size, size)
 
     def __str__(self):
-        return ("[Square] " + str(self.__size) + "/" + str(self.__size))
+        return ("[Square] {:d}/{:d}".format(self.__size, self.__size))
